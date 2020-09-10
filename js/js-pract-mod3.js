@@ -607,6 +607,7 @@
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 // // // == task-2 == //
 // // Написати ф-ю isObjectEmpty яка перевіряє чи обєкт пустий чи ні. Якщо обєкт пустий то повернути true інакше false
 // const isObjectEmpty = function (key) {
@@ -660,19 +661,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ==========================================================================================
 // //Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно
 // // больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
@@ -711,15 +699,9 @@ const shop = {
   for(let arr of this.items)
     if (arr.name === name) {
       console.log(arr);
-      console.log(`(${arr.id}) - ${arr.name}: ${arr.price}$, amount: ${arr.amount}`);
-      
+      console.log(`(${arr.id}) - ${arr.name}: ${arr.price}$, amount: ${arr.amount}`); 
     }
-
-
 	},
-
-
-
     addItem(name, price, amount, category) {
       let a = {id: generateId(), name, price, amount, category};    
       shop.items.push(a)
@@ -735,3 +717,6 @@ const shop = {
 	}
 }
 console.log(shop.showItems('apples'));
+
+
+
