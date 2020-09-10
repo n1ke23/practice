@@ -3,18 +3,14 @@
 // const testObj = {
 //   test: "123",
 
-
 // }
 
 // delete testObj.test;
 // testObj['a'] = a;
 
-
 // console.log(testObj);
 // console.log(testObj.name);
 // console.log(testObj);
-
-
 
 // ===============================================
 
@@ -37,8 +33,6 @@
 // let increment = obj.add();
 // console.log(obj);
 // console.log(increment);
-
-
 
 // ==============================================================
 
@@ -69,7 +63,6 @@
 // obj.offPow(1000);
 // console.log(obj);
 // obj.showTheValue();
-
 
 // =================================================
 
@@ -102,9 +95,7 @@
 // const obj3 = {p, ...obj1, q, obj2};
 // console.log(obj3);
 
-
 // ========================================================
-
 
 // // hw-task-01
 
@@ -128,7 +119,6 @@
 // for(let key of keys) {
 //   console.log(`${key}:${user[key]}`);
 // };
-
 
 // =========================================================
 
@@ -240,7 +230,6 @@
 //   }),
 // ); // 400
 
-
 // =========================================================================
 // task 05
 // const products = [
@@ -262,7 +251,6 @@
 //   return array;
 // };
 
-
 // /*
 //  * Вызовы функции для проверки работоспособности твоей реализации.
 //  */
@@ -275,7 +263,6 @@
 // =================================================================
 
 // task 06
-
 
 // const products = [
 //   { name: 'Радар', price: 1300, quantity: 4 },
@@ -430,104 +417,321 @@
 // //  console.log(account.getTransactionTotal(DEPOSIT));
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++
-const Transaction = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
-};
-/*
- * Каждая транзакция это объект со свойствами: id, type и amount
- */
-const account = {
-  // Текущий баланс счета
-  balance: 0,
-  // История транзакций
-  transactions: [],
-  /*
-   * Метод создает и возвращает объект транзакции.
-   * Принимает сумму и тип транзакции.
-   */
-  createTransaction(amount, type) {
-    let id = this.transactions.length + 1;
-    const transaction = {amount: amount , type: type, id: id};
-    return transaction;
-  },
-  /*
-   * Метод отвечающий за добавление суммы к балансу.
-   * Принимает сумму танзакции.
-   * Вызывает createTransaction для создания объекта транзакции
-   * после чего добавляет его в историю транзакций
-   */
-  deposit(amount) {
-  const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
-  this.transactions.push(transaction);
-    return this.balance += amount;
-  },
-  /*
-   * Метод отвечающий за снятие суммы с баланса.
-   * Принимает сумму танзакции.
-   * Вызывает createTransaction для создания объекта транзакции
-   * после чего добавляет его в историю транзакций.
-   *
-   * Если amount больше чем текущий баланс, выводи сообщение
-   * о том, что снятие такой суммы не возможно, недостаточно средств.
-   */
-  withdraw(amount) {
-    const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
-    this.transactions.push(transaction);
-    if(this.balance >= amount) {
-      return this.balance -= amount;
-    } else {
-      return  'Недостаточно денег';
-    }
-    },
-  /*
-   * Метод возвращает текущий баланс
-   */
-  getBalance() {
-    return this.balance;
-  },
-  /*
-   * Метод ищет и возвращает объект транзации по id
-   */
-  getTransactionDetails(id) {
-    for (let obj of this.transactions){
-    for (let key in obj) {
-      if (obj[key] === id) {
-        return obj;
-      }
-    }
-  }
-  },
-  /*
-   * Метод возвращает количество средств
-   * определенного типа транзакции из всей истории транзакций
-   */
-  getTransactionTotal(type) {
-    let total = 0;
-    for (let obj of this.transactions){
-      for (let key in obj) {
+// const Transaction = {
+//   DEPOSIT: 'deposit',
+//   WITHDRAW: 'withdraw',
+// };
+// /*
+//  * Каждая транзакция это объект со свойствами: id, type и amount
+//  */
+// const account = {
+//   // Текущий баланс счета
+//   balance: 0,
+//   // История транзакций
+//   transactions: [],
+//   /*
+//    * Метод создает и возвращает объект транзакции.
+//    * Принимает сумму и тип транзакции.
+//    */
+//   createTransaction(amount, type) {
+//     let id = this.transactions.length + 1;
+//     const transaction = {amount: amount , type: type, id: id};
+//     return transaction;
+//   },
+//   /*
+//    * Метод отвечающий за добавление суммы к балансу.
+//    * Принимает сумму танзакции.
+//    * Вызывает createTransaction для создания объекта транзакции
+//    * после чего добавляет его в историю транзакций
+//    */
+//   deposit(amount) {
+//   const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+//   this.transactions.push(transaction);
+//     return this.balance += amount;
+//   },
+//   /*
+//    * Метод отвечающий за снятие суммы с баланса.
+//    * Принимает сумму танзакции.
+//    * Вызывает createTransaction для создания объекта транзакции
+//    * после чего добавляет его в историю транзакций.
+//    *
+//    * Если amount больше чем текущий баланс, выводи сообщение
+//    * о том, что снятие такой суммы не возможно, недостаточно средств.
+//    */
+//   withdraw(amount) {
+//     const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+//     this.transactions.push(transaction);
+//     if(this.balance >= amount) {
+//       return this.balance -= amount;
+//     } else {
+//       return  'Недостаточно денег';
+//     }
+//     },
+//   /*
+//    * Метод возвращает текущий баланс
+//    */
+//   getBalance() {
+//     return this.balance;
+//   },
+//   /*
+//    * Метод ищет и возвращает объект транзации по id
+//    */
+//   getTransactionDetails(id) {
+//     for (let obj of this.transactions){
+//     for (let key in obj) {
+//       if (obj[key] === id) {
+//         return obj;
+//       }
+//     }
+//   }
+//   },
+//   /*
+//    * Метод возвращает количество средств
+//    * определенного типа транзакции из всей истории транзакций
+//    */
+//   getTransactionTotal(type) {
+//     let total = 0;
+//     for (let obj of this.transactions){
+//       for (let key in obj) {
+
+//         if (obj[key] === `${type}`) {
+//           total += obj.amount;
+//         }
+//       }
+//     }
+//     return total;
+//   },
+// };
+// console.log(account.createTransaction(500, Transaction.DEPOSIT));
+// console.log(account.deposit(400));
+// console.log(account.balance);
+// console.log(account.deposit(500));
+// console.log(account.balance);
+// console.log(account.withdraw(300));
+// console.log(account.balance);
+// console.log(account.withdraw(2000));
+// console.log(account.getBalance());
+// console.log(account.transactions);
+// //  console.log(account.getTransactionDetails(2));
+// console.log(account.getTransactionTotal(Transaction.WITHDRAW));
+// // account.getTransactionTotal(Transaction.WITHDRAW);
+// //  console.log(account.getTransactionTotal("deposit"));
+// //  console.log(account.getTransactionTotal(deposit));
+// //  console.log(account.getTransactionTotal(DEPOSIT));
+
+// ==================================================================================================================================
+
+// дополнительные задачки
+// ===================== ADDITIONAL ========================== //
+// // == task-1 == //
+// Написати ф-ю яка приймає в себе 2 параметра (обєкт замовлення і обєкт з цінами товару) Ця ф-я має повернути ціну замовлення
+// const productsPrice = { apple: 20, orange: 5, cheese: 12, pork: 45, bread: 23 } const orderA = { apple: 5, cheese: 1, bread: 3 } const orderB = { orange: 10, pork: 2, bread: 1 }
+
+// // == task-2 == //
+// Написати ф-ю isObjectEmpty яка перевіряє чи обєкт пустий чи ні. Якщо обєкт пустий то повернути true інакше false
+// isObjectEmpty({}) // true
+// isObjectEmpty({name: 'user, age: {21}}) // false
+
+// // == task-3 == //
+// Створити обєкт піци з полями і методами
+
+// В обєкті має бути такі поля і методи:
+
+// поле для збереження розміру піци
+// поле для збереження списку добавок
+// поле для збереження списку соусів
+// метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
+// метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати, також помилка показувється якщо пробуємо видалити добавку, а там ще жодної немає)
+// метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
+// метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
+// метод для розрахунку загальної ціни піци (розмір + добавки + соуси) (ціна округлена до двох знаків після коми)
+// метод для розрахунку загальної кількості калорій піци (розмір + добавки + соуси)
+// метод який показує загальну інформацію про замовлення (ціну, калорії, список добавок і соусів) (Якщо піца валідна інакше показувати помилку)
+// метод вибору розміру піци (Розмір піци можна змінити в будь-який момент)
+// метод що показує час приготуванни в хвилинах в залежності від складності піци
+// Метод валідації піци який поверне true якщо піца відповідає вимогам , а саме (вибраний розмір піци, є мінімум одна добавка, і мінімум один соус) інакше false (І виводить строку чого не вистачає (коржа, добавки, чи соусу)) (використовувати this)
+// const SIZES = {
+// BIG: { price: 25, cal: 100, time: 15 },
+// SMALL : { price : 15, cal: 50, time: 7 },
+// MEDIUM: { price : 15, cal: 50, time: 7 }
+// },
+// const STUFFING = {
+// CHEESE: { price : 6.5, cal: 45, time: 2 },
+// BEACON : { price : 10, cal: 70, time: 6 },
+// TOMATO : { price : 12.1, cal: 4, time: 5 },
+// CHICKEN : { price : 9.3, cal: 30, time: 5.1 }
+// }
+// const SAUCES = {
+// MUSTARD: { price : 3, cal: 5, time: 1 },
+// KETCHUP = { price : 4.2, cal: 20, time: 1.5 },
+// BOLOGNESE = { price : 7.5, cal: 50, time: 3 }
+// }
+// Створити всі методи і перевірити чи вони працюють
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// // // // == task-1 == //
+// // Написати ф-ю яка приймає в себе 2 параметра (обєкт замовлення і обєкт з цінами товару) Ця ф-я має повернути ціну замовлення
+// const productsPrice = { apple: 20, orange: 5, cheese: 12, pork: 45, bread: 23 };
+// const orderA = { apple: 5, cheese: 1, bread: 3 };
+// const orderB = { orange: 10, pork: 2, bread: 1 };
+
+// let check = function () {
+//   const entriesProductsPrice = Object.entries(productsPrice);
+//   const entriesOrderA = Object.entries(orderA);
+//   let totalOrderA = 0;
+//   for (let price of entriesProductsPrice) {
+//     let n = 0;
+//     for (let order of entriesOrderA) {
+//       if (price[0] === order[0]) {
+//         n = price[1] * order[1];
+//         totalOrderA += n;
+//       }
+//     }
+//   }
+//   const entriesOrderB = Object.entries(orderB);
+//   let totalOrderB = 0;
+//   for (let price of entriesProductsPrice) {
+//     let n = 0;
+//     for (let order of entriesOrderB) {
+//       if (price[0] === order[0]) {
+//         n = price[1] * order[1];
+//         totalOrderB += n;
+//       }
+//     }
+//   }
+//   console.log(totalOrderA);
+//   console.log(totalOrderB);
+// };
+// check();
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // // == task-2 == //
+// // Написати ф-ю isObjectEmpty яка перевіряє чи обєкт пустий чи ні. Якщо обєкт пустий то повернути true інакше false
+// const isObjectEmpty = function (key) {
+//   if (Object.keys(key).length){
+//     console.log(false);
+//   } else {
+//     console.log(true);
+//   }
+// };
+
+// isObjectEmpty({}); // true
+// isObjectEmpty({name: 'user', age: 21}); // false
+
+
+// =============================================================================
+
+
+
+// const numbers = function (... element){
+//   for (let num of element) {
+//     if (num % 2 === +0){
+//       console.log(`${num} - это число четное`);
+//     } else {
+//       console.log(`${num} - это число не четное`);
+//     }
+//   }
+// }
+
+// numbers(1,2,3,10);
+
+
+
+
+
+
+// ================================================================================
+
+
+// Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
+// Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск.
+// Функция должна возвращать true или false
+// var str = 'яблоко';
+// var arr = ['банан', 'яблоко', 'персик'];
+
+// const inArray = function(str, arr) {
+// if (arr.includes(str)) return true
+// }
+// console.log(inArray(str, arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================================================================================
+// //Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно
+// // больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+
+// const isNumberInRange = function(numb) {
+//   if (numb > Number(10)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(isNumberInRange(0));
+
+function generateId() {
+	const randomNumber = Math.random();
+	return randomNumber.toString().slice(2);
+}
+
+const shop = {
+	name: 'Shop #1',
+	address: 'Kiev',
+
+	items: [
+		{ id: '1', name: 'bananes', price: 20, amount: 200, category: 'fruits' },
+		{ id: '2', name: 'apples', price: 20, amount: 1, category: 'fruits' },
+		{
+			id: 'werwer2343',
+			name: 'apples',
+			price: 20,
+			amount: 1,
+			category: 'fruits',
+		},
+	],
+
+	showItems(name) {
+  for(let arr of this.items)
+    if (arr.name === name) {
+      console.log(arr);
+      console.log(`(${arr.id}) - ${arr.name}: ${arr.price}$, amount: ${arr.amount}`);
       
-        if (obj[key] === `${type}`) {
-          total += obj.amount;
-        }
-      }
     }
-    return total; 
+
+
+	},
+
+
+
+    addItem(name, price, amount, category) {
+      let a = {id: generateId(), name, price, amount, category};    
+      shop.items.push(a)
+      console.log(shop.items);
   },
-};
-console.log(account.createTransaction(500, Transaction.DEPOSIT));
-console.log(account.deposit(400));
-console.log(account.balance);
-console.log(account.deposit(500));
-console.log(account.balance);
-console.log(account.withdraw(300));
-console.log(account.balance);
-console.log(account.withdraw(2000));
-console.log(account.getBalance());
-console.log(account.transactions);
-//  console.log(account.getTransactionDetails(2));
-console.log(account.getTransactionTotal(Transaction.WITHDRAW));
-// account.getTransactionTotal(Transaction.WITHDRAW);
-//  console.log(account.getTransactionTotal("deposit"));
-//  console.log(account.getTransactionTotal(deposit));
-//  console.log(account.getTransactionTotal(DEPOSIT));
+
+
+	removeItem(productName) {
+	},
+
+	updateItem(productName, newName) {
+
+	}
+}
+console.log(shop.showItems('apples'));
