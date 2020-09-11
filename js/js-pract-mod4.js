@@ -83,22 +83,22 @@
 // ===================== ADDITIONAL ========================== //
 // // == task-1 == //
 // Написати метод every який приймає масив і ф-ю callback (в якій ми будемо робити різні перевірки) Цей метод повертає true якщо кожен елемент масиву пройшов перевірку з callback. Якщо хоча б один елемент не проходить перевірку то повертає false, callback приймає елемент масиву
-const every = function (arr, callback){
- console.log(callback(arr));
-}
-function callback(argument) {
-  for(let numb of argument) {
-    console.log(numb);
-    if(numb < 10) {
-      continue
-    } else {
-      return false
-    }
-  }
-  return true
-}
-every([1,2,3,4,5], callback) // true (перевіряємо чи елементи < 10)
-every([2,45,67,34], callback) // false (перевіряємо чи елементи > 10)
+// const every = function (arr, callback){
+//  console.log(callback(arr));
+// }
+// function callback(argument) {
+//   for(let numb of argument) {
+//     console.log(numb);
+//     if(numb < 10) {
+//       continue
+//     } else {
+//       return false
+//     }
+//   }
+//   return true
+// }
+// every([1,2,3,4,5], callback) // true (перевіряємо чи елементи < 10)
+// every([2,45,67,34], callback) // false (перевіряємо чи елементи > 10)
 // // == task-2 == //
 // Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один елемент масиву пройже перевірку з callback callback приймає елемент масиву
 
@@ -144,6 +144,20 @@ every([2,45,67,34], callback) // false (перевіряємо чи елемен
 
 // Якщо прогрес доставки null показувати строку "Ready for delivery"
 
+// const showDeliveryStatus = function (argument) {
+// for(let arg of argument){
+//   if(arg.deliveryProgress === 100){
+//     console.log("Done");
+//   } else if (arg.deliveryProgress === null){
+//     console.log("Ready for delivery");
+//   } else if (arg.deliveryProgress < 100) {
+//     console.log("In progress");
+//   }
+// }
+
+
+// }
+
 // const ordersA = [
 // { name: 'Phone', price: 12300, deliveryProgress: 50, type: 0 },
 // { name: 'Computer', price: 230000, deliveryProgress: 100, type: 1 },
@@ -162,7 +176,7 @@ every([2,45,67,34], callback) // false (перевіряємо чи елемен
 
 
 
-
+// ??????????????????????????????????????????????????????????????????????????????????????????????????????????/
 // const some = function (arr, callback){
 //   console.log(callback(arr));
 //  }
@@ -177,14 +191,38 @@ every([2,45,67,34], callback) // false (перевіряємо чи елемен
  
 //   some([1,2,3,23,5], callback) // true (перевіряємо чи елементи > 10)
 //   some([12,45,67,34], callback) // false (перевіряємо чи елементи < 10)
+// ?????????????????????????????????????????????????????????????????????????????????????????????????????????/
 
 
 
 
 
 
+const account = {
+  owner: 'Mango',
+  balance: 24000,
+  discount: 0.1,
+  orders: ['order-1', 'order-2', 'order-3'],
+  changeDiscount(value) {
+    this.discount = value;
+  },
+  showOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost;
+    this.orders.push(order);
+  },
+};
 
+// account.changeDiscount(0.15);
+// console.log(account.discount); // 0.15
 
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+ account.addOrder(5000, 'order-4');
+ console.log(account.balance); // 19000
+ console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
 
 
 
