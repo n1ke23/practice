@@ -605,7 +605,6 @@
 // };
 // check();
 
-
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // // // == task-2 == //
@@ -621,10 +620,7 @@
 // isObjectEmpty({}); // true
 // isObjectEmpty({name: 'user', age: 21}); // false
 
-
 // =============================================================================
-
-
 
 // const numbers = function (... element){
 //   for (let num of element) {
@@ -638,13 +634,7 @@
 
 // numbers(1,2,3,10);
 
-
-
-
-
-
 // ================================================================================
-
 
 // Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
 // Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск.
@@ -656,10 +646,6 @@
 // if (arr.includes(str)) return true
 // }
 // console.log(inArray(str, arr));
-
-
-
-
 
 // ==========================================================================================
 // //Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно
@@ -675,48 +661,43 @@
 // console.log(isNumberInRange(0));
 
 function generateId() {
-	const randomNumber = Math.random();
-	return randomNumber.toString().slice(2);
+  const randomNumber = Math.random();
+  return randomNumber.toString().slice(2);
 }
 
 const shop = {
-	name: 'Shop #1',
-	address: 'Kiev',
+  name: 'Shop #1',
+  address: 'Kiev',
 
-	items: [
-		{ id: '1', name: 'bananes', price: 20, amount: 200, category: 'fruits' },
-		{ id: '2', name: 'apples', price: 20, amount: 1, category: 'fruits' },
-		{
-			id: 'werwer2343',
-			name: 'apples',
-			price: 20,
-			amount: 1,
-			category: 'fruits',
-		},
-	],
+  items: [
+    { id: '1', name: 'bananes', price: 20, amount: 200, category: 'fruits' },
+    { id: '2', name: 'apples', price: 20, amount: 1, category: 'fruits' },
+    {
+      id: 'werwer2343',
+      name: 'apples',
+      price: 20,
+      amount: 1,
+      category: 'fruits',
+    },
+  ],
 
-	showItems(name) {
-  for(let arr of this.items)
-    if (arr.name === name) {
-      console.log(arr);
-      console.log(`(${arr.id}) - ${arr.name}: ${arr.price}$, amount: ${arr.amount}`); 
-    }
-	},
-    addItem(name, price, amount, category) {
-      let a = {id: generateId(), name, price, amount, category};    
-      shop.items.push(a)
-      console.log(shop.items);
+  showItems(name) {
+    for (let arr of this.items)
+      if (arr.name === name) {
+        console.log(arr);
+        console.log(
+          `(${arr.id}) - ${arr.name}: ${arr.price}$, amount: ${arr.amount}`,
+        );
+      }
+  },
+  addItem(name, price, amount, category) {
+    let a = { id: generateId(), name, price, amount, category };
+    shop.items.push(a);
+    console.log(shop.items);
   },
 
+  removeItem(productName) {},
 
-	removeItem(productName) {
-	},
-
-	updateItem(productName, newName) {
-
-	}
-}
+  updateItem(productName, newName) {},
+};
 console.log(shop.showItems('apples'));
-
-
-

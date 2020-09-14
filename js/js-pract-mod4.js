@@ -1,5 +1,5 @@
 // const arr = function (n, str) {
- 
+
 //   for ( let i = 1; i <= n; i++) {
 //     console.log(img);
 //     console.log(`${str} - ${i}`);
@@ -8,8 +8,6 @@
 //   sdiasfhsduifhisoaid
 // }
 // arr(12, 'Количество цыфр')
-
-
 
 // const filter = function(array, test) {
 //   const filteredElements = [];
@@ -35,10 +33,7 @@
 
 // ============================================================================================================================================
 
-
 // zarplata > 100 and not works
-
-
 
 // const filter = function (array, fun) {
 //   let gay = []
@@ -59,7 +54,6 @@
 // const bad = filter(community, communitys => communitys.salary > 100 && !communitys.isActiveWorker)
 // console.log(bad);
 
-
 // =======================================================================================================================================
 // console.log(q);
 // console.log(y);
@@ -72,13 +66,11 @@
 // fn2
 // console.log(e);
 
-
 // qytrwe
 
 // let a=10;
 // { let a = 1}
 // console.log(a);
-
 
 // ===================== ADDITIONAL ========================== //
 // // == task-1 == //
@@ -155,7 +147,6 @@
 //   }
 // }
 
-
 // }
 
 // const ordersA = [
@@ -172,10 +163,6 @@
 // showDeliveryStatus(ordersA) // "In Progress", "Done", "Ready for delivery"
 // showDeliveryStatus(ordersB) // "In progress", "Not Ordered", "Ready for delivery"
 
-
-
-
-
 // ??????????????????????????????????????????????????????????????????????????????????????????????????????????/
 // const some = function (arr, callback){
 //   console.log(callback(arr));
@@ -184,48 +171,61 @@
 //    for(let numb of argument) {
 // console.log(numb);
 //        return numb > 10 ? true  : false
-     
+
 //    }
 
 //  }
- 
+
 //   some([1,2,3,23,5], callback) // true (перевіряємо чи елементи > 10)
 //   some([12,45,67,34], callback) // false (перевіряємо чи елементи < 10)
 // ?????????????????????????????????????????????????????????????????????????????????????????????????????????/
 
+// const account = {
+//   owner: 'Mango',
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ['order-1', 'order-2', 'order-3'],
+//   changeDiscount(value) {
+//     this.discount = value;
+//   },
+//   showOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost;
+//     this.orders.push(order);
+//   },
+// };
 
+// // account.changeDiscount(0.15);
+// // console.log(account.discount); // 0.15
 
+// // console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
 
+//  account.addOrder(5000, 'order-4');
+//  console.log(account.balance); // 19000
+//  console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
+// ========================================================================================
+// alert('hellow');
+// console.log('hellow123');
 
-
-const account = {
-  owner: 'Mango',
-  balance: 24000,
-  discount: 0.1,
-  orders: ['order-1', 'order-2', 'order-3'],
-  changeDiscount(value) {
-    this.discount = value;
-  },
-  showOrders() {
-    return this.orders;
-  },
-  addOrder(cost, order) {
-    this.balance -= cost;
-    this.orders.push(order);
-  },
-};
-
-// account.changeDiscount(0.15);
-// console.log(account.discount); // 0.15
-
-// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
-
- account.addOrder(5000, 'order-4');
- console.log(account.balance); // 19000
- console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
-
-
-
-
-
-
+// const fun1 = function (callback) {
+//   let string = 'Hellow Sasha';
+//   callback(string);
+// };
+// const printMessage = function (asdasd) {
+//   console.log(asdasd);
+// };
+// fun1(printMessage);
+// ===============================================================================
+// const repeat = function (n, callback) {
+//   for (let i = 1; i <= n; i++) {
+//     // console.log(i);
+//     callback(i);
+//   }
+// };
+// const print = function (action) {
+//   console.log(`Ты сегодня сделал это ${action} раз`);
+// };
+// repeat(5, print);
+// =============================================================================
