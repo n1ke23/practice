@@ -94,23 +94,39 @@
 // // == task-2 == //
 // Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один елемент масиву пройже перевірку з callback callback приймає елемент масиву
 
-// const some = function (arr, callback){
-//  console.log(callback(arr));
-// }
-// function callback(argument) {
-//   for(let numb of argument) {
-//     console.log(numb);
-//     if(numb < 10) {
-//       return true
-//     } else {
-//       continue
-//     }
-//   }
-//   return false
-// }
+const some = function (arr, callback){
+ console.log(callback(arr));
+}
+function callback1(argument) {
+  let a
+  for(let numb of argument) {
+    if(numb > 10) {
+       a = true
+    }
+  }
+  if(a === true){
+      return true
+    } else {
+      return false
+  }
+}
+function callback2(argument) {
+  let a
+  for(let numb of argument) {
+    console.log(numb);
+    if(numb < 10) {
+       a = true
+    }
+  }
+  if(a === true){
+    return true
+  } else{
+    return false
+  }
+}
 
-//  some([1,2,3,23,5], callback) // true (перевіряємо чи елементи > 10)
-//  some([12,45,67,34], callback) // false (перевіряємо чи елементи < 10)
+some([1,2,3,23,5], callback1) // true (перевіряємо чи елементи > 10)
+some([12,45,67,34], callback2) // false (перевіряємо чи елементи < 10)
 
 // // == task-3 == //
 // Створити метод compact який приймає масив і вертає новий де відсутні будь-які значення що при переведені в bool дають false
@@ -229,3 +245,228 @@
 // };
 // repeat(5, print);
 // =============================================================================
+
+
+
+// const hotel1 = {
+//   name: "Rivas",
+//   star: "5",
+//   capacity: 300
+// }
+// const hotel2 = {
+//   name: "Jazz",
+//   star: "5",
+//   capacity: 200
+// }
+// const hotel3 = {
+//   name: "Dnepro",
+//   star: "2+",
+//   capacity: 5000
+// }
+
+// const fn = function(callback, userName) {
+// console.log(`hi ${userName}, welcom to ${this.name} ${this.star} ${this.capacity}`);
+// }
+// fn.call(hotel1, "user");
+// const dneprFn = fn.bind(hotel3);
+// dneprFn("Vova");
+
+// ==========================================================================================
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function() { // показывает текущую ступеньку
+//     console.log(this.step );
+//     return this;
+//   }
+// };
+// // Теперь, если нам нужно сделать несколько последовательных вызовов, мы можем выполнить это так:
+// // ladder.up();
+// // ladder.up();
+// // ladder.down();
+// // ladder.showStep(); // 1
+// // Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
+// // ladder.up().up().up().down().showStep(); // 1
+
+
+// // // ==============================================================================
+// const film = [];
+// const cinema;
+// const actor = function(name){
+//   cinema[name] = [];
+//   return function (kino) {
+//     // film.push(kino);
+//     cinema[name].push(kino);
+//     console.log(`${name} of film: ${kino}`);
+//   }
+// }
+
+// const stehem = actor('Stethem');
+// stehem('Pirati')
+// stehem('Oshen')
+// // console.log(film);
+// console.log(cinema);
+// const vick = actor("Jon Vick")
+// vick("friends");
+// vick("tik-tock")
+// console.log(cinema);
+
+
+
+// const jony = function(name){
+// console.log(`${name}`);
+// return (film){
+
+// }}
+// jony("Jony Dep")
+
+
+
+
+// const obj = {
+//   key: "sasha",
+//   age: 23
+// }
+// console.log(obj.age);
+
+
+
+
+// const user = {
+//   name: "Sasha",
+//   age: 31,
+//   phone: 80660000000,
+//   email: "aa@BhxBrowser.com",
+//   toShowProps() {
+//     console.log(this.name);
+//     console.log(this.age);
+//     console.log(this.phone);
+//     console.log(this.email);
+    
+//   }
+// }
+// const user2 = {
+//   name: "Kostya"
+// }
+// const user3 = {
+//   name: "Zaharia",
+//   age: 102,
+//   toUpdateAge(value){
+    
+//     return this.age = value
+//   }
+// }
+// // user.toShowProps()
+
+// const example = function (callback, val){
+//   return callback(val)
+// }
+
+// example(user.toShowProps.bind(user))
+// // console.log(this);
+// example(user.toShowProps.bind(user2))
+// console.log(example(user3.toUpdateAge.bind(user), 20));
+
+
+
+// =================================================
+
+
+// const toGetResult = function(callback,...value){
+//   return callback(...value)
+// }
+// function toGetSum (a,b,c){
+//   return a + b + c
+// }
+// function toGetMultyply(x,y){
+//   return x * y
+// }
+// toGetResult((val) => {console.log(val%5)}, 20);
+// console.log(toGetResult(toGetSum, 21, 12, 2));
+
+
+
+// function sum (a,b) {
+//   return a+b
+// }
+// function div (a,b) {
+//   return a/b
+// }
+// function sub (a,b) {
+//   return a-b
+// }
+// function mult (a,b) {
+//   return a*b
+// }
+// function calc(a,b,operator){
+//   return operator(a,b)
+// }
+
+// console.log(calc(10,21, mult));
+// console.log(calc(10,21, sub));
+
+// =============================================================================================
+// let userName = [];
+// let userPhone= [];
+// let userEmail = [];
+// const toGetForm = function (name,phone,email, ...arr){
+//   console.log(arr);
+//   userName.push(name);
+//   userPhone.push(phone);
+//   userEmail.push(email);
+// }
+
+// toGetForm("name","phone","email",1,2,3,4,5)
+// toGetForm("Sasha","123123123123","aa@bb.com",1,2,3,4,5)
+
+// console.log(userName);
+// console.log(userPhone);
+// console.log(userEmail);
+
+// 
+
+// ==================================================
+
+// const products = [
+//   {
+//     name: "Volvo",
+//     price: 50000,
+//     quantity: 10,
+//     premium: true,
+//   },
+//   {
+//     name: "Audi",
+//     price: 5000,
+//     quantity: 4,
+//     premium: true,
+//   },
+//   {
+//     name: "Zhiguli",
+//     price: 100,
+//     quantity: 1,
+//     premium: false,
+//   }
+// ]
+
+// const totalSum = (value, arr) => {
+//   for(let obj of arr){
+//       if (value === obj.name) return obj.quantity * obj.price;
+//   } 
+//   return "Такого не существует"
+// }
+
+// console.log(totalSum("Volvo", products));
+// console.log(totalSum("Audi", products));
+// console.log(totalSum("HP", products));
+// console.log(totalSum("Zhiguli", products));
+
+
+
+

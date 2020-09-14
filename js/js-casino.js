@@ -10,9 +10,11 @@ const start = function (n) {
   if (total > n) {
     console.log(windowOne, windowTwo, windowThree);
     if (windowOne === windowTwo && windowOne === windowThree) {
+      let win = 4 * n;
+      console.log(`Ты выйграл ${win}`);
       return (total = 4 * n + total);
     } else {
-      return (total = total - n);
+      return (total -= n);
     }
   } else {
     return console.log('У вас не достаточно средств для игры, внесите сумму');
