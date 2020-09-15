@@ -20,11 +20,14 @@
 // bind(person2, logPerson)();
 
 
-let a = [];
-const pizza = function (... arr) {
-  // console.log(arr);
-  return a = arr
-};
-pizza(1,2,"3");
-console.log(a);
-a.pizza(asda)
+// let a = [];
+// const pizza = function (... arr) {
+//   // console.log(arr);
+//   return a = arr
+// };
+// pizza(1,2,"3");
+// console.log(a);
+// a.pizza(asda)
+
+
+
