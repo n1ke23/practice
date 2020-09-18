@@ -1,48 +1,48 @@
-const userAnswerRef = document.querySelector(".input-ref");
-const buttonRef = document.querySelector(".button");
-// let country = userСountry[0].toUpperCase() + userСountry.substring(1); //
+// const userAnswerRef = document.querySelector(".input-ref");
+// const buttonRef = document.querySelector(".button");
+// // let country = userСountry[0].toUpperCase() + userСountry.substring(1); //
 
-buttonRef.addEventListener("click", function () {
-  const userAnswer = userAnswerRef.value;
-  const userСountry = userAnswer.toLowerCase();
+// buttonRef.addEventListener("click", function () {
+//   const userAnswer = userAnswerRef.value;
+//   const userСountry = userAnswer.toLowerCase();
 
-  const china = "китай";
-  const chile = "чили";
-  const australia = "австралия ";
-  const india = "индия";
-  const jamaica = "ямайка";
-  let cost;
+//   const china = "китай";
+//   const chile = "чили";
+//   const australia = "австралия ";
+//   const india = "индия";
+//   const jamaica = "ямайка";
+//   let cost;
 
-  switch (userСountry) {
-    case china:
-      cost = 100;
-      alert(`Доставка в ${china} будет стоить ${cost} кредитов`);
-      break;
+//   switch (userСountry) {
+//     case china:
+//       cost = 100;
+//       alert(`Доставка в ${china} будет стоить ${cost} кредитов`);
+//       break;
 
-    case chile:
-      cost = 250;
-      alert(`Доставка в ${chile} будет стоить ${cost} кредитов`);
-      break;
+//     case chile:
+//       cost = 250;
+//       alert(`Доставка в ${chile} будет стоить ${cost} кредитов`);
+//       break;
 
-    case australia:
-      cost = 170;
-      alert(`Доставка в ${australia} будет стоить ${cost} кредитов`);
-      break;
+//     case australia:
+//       cost = 170;
+//       alert(`Доставка в ${australia} будет стоить ${cost} кредитов`);
+//       break;
 
-    case india:
-      cost = 80;
-      alert(`Доставка в ${india} будет стоить ${cost} кредитов`);
-      break;
+//     case india:
+//       cost = 80;
+//       alert(`Доставка в ${india} будет стоить ${cost} кредитов`);
+//       break;
 
-    case jamaica:
-      cost = 120;
-      alert(`Доставка в ${jamaica} будет стоить ${cost} кредитов`);
-      break;
+//     case jamaica:
+//       cost = 120;
+//       alert(`Доставка в ${jamaica} будет стоить ${cost} кредитов`);
+//       break;
 
-    default:
-      alert("В вашей стране доставка не доступна");
-  }
-});
+//     default:
+//       alert("В вашей стране доставка не доступна");
+//   }
+// });
 // let userAnswerRef = document.querySelector(".input-ref");
 // const userAnswer = userAnswerRef.value;
 // const userСountry = userAnswer.toLowerCase();

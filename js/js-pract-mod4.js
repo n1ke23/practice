@@ -94,39 +94,39 @@
 // // == task-2 == //
 // Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один елемент масиву пройже перевірку з callback callback приймає елемент масиву
 
-const some = function (arr, callback){
- console.log(callback(arr));
-}
-function callback1(argument) {
-  let a
-  for(let numb of argument) {
-    if(numb > 10) {
-       a = true
-    }
-  }
-  if(a === true){
-      return true
-    } else {
-      return false
-  }
-}
-function callback2(argument) {
-  let a
-  for(let numb of argument) {
-    console.log(numb);
-    if(numb < 10) {
-       a = true
-    }
-  }
-  if(a === true){
-    return true
-  } else{
-    return false
-  }
-}
+// const some = function (arr, callback){
+//  console.log(callback(arr));
+// }
+// function callback1(argument) {
+//   let a
+//   for(let numb of argument) {
+//     if(numb > 10) {
+//        a = true
+//     }
+//   }
+//   if(a === true){
+//       return true
+//     } else {
+//       return false
+//   }
+// }
+// function callback2(argument) {
+//   let a
+//   for(let numb of argument) {
+//     console.log(numb);
+//     if(numb < 10) {
+//        a = true
+//     }
+//   }
+//   if(a === true){
+//     return true
+//   } else{
+//     return false
+//   }
+// }
 
-some([1,2,3,23,5], callback1) // true (перевіряємо чи елементи > 10)
-some([12,45,67,34], callback2) // false (перевіряємо чи елементи < 10)
+// some([1,2,3,23,5], callback1) // true (перевіряємо чи елементи > 10)
+// some([12,45,67,34], callback2) // false (перевіряємо чи елементи < 10)
 
 // // == task-3 == //
 // Створити метод compact який приймає масив і вертає новий де відсутні будь-які значення що при переведені в bool дають false
@@ -213,14 +213,14 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 //   },
 // };
 
-// // account.changeDiscount(0.15);
-// // console.log(account.discount); // 0.15
+// account.changeDiscount(0.15);
+// console.log(account.discount); // 0.15
 
-// // console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
 
-//  account.addOrder(5000, 'order-4');
-//  console.log(account.balance); // 19000
-//  console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
+// account.addOrder(5000, 'order-4');
+// console.log(account.balance); // 19000
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
 // ========================================================================================
 // alert('hellow');
 // console.log('hellow123');
@@ -245,8 +245,6 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // };
 // repeat(5, print);
 // =============================================================================
-
-
 
 // const hotel1 = {
 //   name: "Rivas",
@@ -295,7 +293,6 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // // Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
 // // ladder.up().up().up().down().showStep(); // 1
 
-
 // // // ==============================================================================
 // const film = [];
 // const cinema;
@@ -318,8 +315,6 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // vick("tik-tock")
 // console.log(cinema);
 
-
-
 // const jony = function(name){
 // console.log(`${name}`);
 // return (film){
@@ -327,17 +322,11 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // }}
 // jony("Jony Dep")
 
-
-
-
 // const obj = {
 //   key: "sasha",
 //   age: 23
 // }
 // console.log(obj.age);
-
-
-
 
 // const user = {
 //   name: "Sasha",
@@ -349,7 +338,7 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 //     console.log(this.age);
 //     console.log(this.phone);
 //     console.log(this.email);
-    
+
 //   }
 // }
 // const user2 = {
@@ -359,7 +348,7 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 //   name: "Zaharia",
 //   age: 102,
 //   toUpdateAge(value){
-    
+
 //     return this.age = value
 //   }
 // }
@@ -374,10 +363,7 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // example(user.toShowProps.bind(user2))
 // console.log(example(user3.toUpdateAge.bind(user), 20));
 
-
-
 // =================================================
-
 
 // const toGetResult = function(callback,...value){
 //   return callback(...value)
@@ -390,8 +376,6 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // }
 // toGetResult((val) => {console.log(val%5)}, 20);
 // console.log(toGetResult(toGetSum, 21, 12, 2));
-
-
 
 // function sum (a,b) {
 //   return a+b
@@ -430,7 +414,7 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // console.log(userPhone);
 // console.log(userEmail);
 
-// 
+//
 
 // ==================================================
 
@@ -458,7 +442,7 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // const totalSum = (value, arr) => {
 //   for(let obj of arr){
 //       if (value === obj.name) return obj.quantity * obj.price;
-//   } 
+//   }
 //   return "Такого не существует"
 // }
 
@@ -466,7 +450,3 @@ some([12,45,67,34], callback2) // false (перевіряємо чи елеме�
 // console.log(totalSum("Audi", products));
 // console.log(totalSum("HP", products));
 // console.log(totalSum("Zhiguli", products));
-
-
-
-
